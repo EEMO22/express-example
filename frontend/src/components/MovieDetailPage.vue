@@ -26,14 +26,14 @@
 import axios from 'axios';
 
 export default {
-    created: function () {
-        const id = this.$route.parms.id;
-        axios.get('/api/movies/${id}')
+    created() {
+        const id = this.$route.params.id;
+        axios.get(`/api/movies/${id}`)
         .then((response) => {
             this.movie = response.data[0];
         });
     },
-    data: function () {
+    data() {
         return {
             movie: {},
         };
